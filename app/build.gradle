@@ -24,4 +24,14 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
+
+    // Parse SDK
+    compile 'com.parse:parse-android:1.13.1'
+    compile 'com.parse.bolts:bolts-android:1.+'
+
+    //Parse UI
+    compile 'com.parse:parseui-widget-android:0.0.1'
+
+    //Circle Image View
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }
