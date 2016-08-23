@@ -26,6 +26,10 @@
         <activity
             android:name=".ContactUsActivity"
             android:label="Contact Us" />
+
+        <activity
+            android:name=".PollingView" />
+
     </application>
 
 </manifest>

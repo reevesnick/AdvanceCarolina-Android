@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               startActivity(new Intent(MainActivity.this,PollingView.class));
+               Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                      .setAction("Action", null).show();
             }
         });
     }
@@ -52,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new NewsFragment(), "News");
         adapter.addFragment(new BallotFragment(), "Ballot");
-        adapter.addFragment(new PollingView(), "Poll");
+        //adapter.addFragment(new PollingView(), "Poll");
         adapter.addFragment(new CandidatesFragment(), "Candidates");
-       // adapter.addFragment(new ContactUsActivity(), "Contact Us");
+        //adapter.addFragment(new ContactUsActivity(), "Contact Us");
         viewPager.setAdapter(adapter);
     }
 
