@@ -30,6 +30,23 @@
         <activity
             android:name=".PollingView" />
 
+
+        <activity
+            android:name=".pollingview.PollLocationActivity"
+            android:label="Search"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.pollingview.PollLocationActivity" />
+
+        </activity>
+
     </application>
 
 </manifest>

@@ -44,8 +44,8 @@ public class PollingView extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new PollLocationFragment(), "Polling Location");
-        adapter.addFragment(new ScheduleVoteActivity(), "Schedule Vote");
+        //adapter.addFragment(new PollLocationActivity(), "Polling Location");
+        //adapter.addFragment(new ScheduleVoteActivity(), "Schedule Vote");
 
         viewPager.setAdapter(adapter);
 
