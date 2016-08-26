@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AdvanceUS</string>
     <string name="action_settings">Settings</string>
-
+    <string name="vschedule_empty_subheader">This allows you to schedule your vote and notify you the next polling event. To get started, tap the + button to create your first event. </string>
+    <string name="schedule_vote_message">Schedule your vote using the time of vote and select a date. This will help us notify you of your next polling event. </string>
 
 </resources>

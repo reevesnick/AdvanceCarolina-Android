@@ -16,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import com.app.advancecarolina.pollingview.ScheduleVoteActivity;
+import com.batch.android.Batch;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(MainActivity.this,PollingView.class));
+               startActivity(new Intent(MainActivity.this,ScheduleVoteActivity.class));
                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                       .setAction("Action", null).show();
             }
@@ -89,6 +92,37 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        Batch.onStart(this);
+    }
+
+    @Override
+    protected void onStop()
+    {
+        Batch.onStop(this);
+
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        Batch.onDestroy(this);
+
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent)
+    {
+        Batch.onNewIntent(this, intent);
+
+        super.onNewIntent(intent);
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

@@ -8,7 +8,29 @@
         android:layout_height="fill_parent"
         android:listSelector="@android:color/transparent"
         android:cacheColorHint="@android:color/transparent"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp"
+        android:layout_alignParentBottom="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Voting Schedule"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:id="@+id/textViewEmpty1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/vschedule_empty_subheader"
+        android:id="@+id/textView5"
+        android:gravity="center"
+        android:layout_below="@+id/textViewEmpty1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
     <android.support.design.widget.FloatingActionButton
