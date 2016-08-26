@@ -3,6 +3,7 @@ package com.app.advancecarolina;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,7 +53,7 @@ public class NewsSingleItemView extends Activity {
 
         //Linkify
 
-        //Linkify.addLinks(txtbody, Linkify.ALL);
+        Linkify.addLinks(txtbody, Linkify.ALL);
         // Capture position and set results to the ImageView
         // Passes flag images URL into ImageLoader.class
         //imageLoader.DisplayImage(imageLabel, img);

@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import com.app.advancecarolina.pollingview.PollLocationActivity;
 import com.app.advancecarolina.pollingview.ScheduleVoteActivity;
 import com.batch.android.Batch;
 
@@ -46,9 +47,19 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(MainActivity.this,ScheduleVoteActivity.class));
+               startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                       .setAction("Action", null).show();
+            }
+        });
+
+        FloatingActionButton scheduleFab = (FloatingActionButton) findViewById(R.id.fabSchedule);
+        scheduleFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ScheduleVoteActivity.class));
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
     }
@@ -81,9 +92,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         if (id == R.id.contact_us){
             Intent contact = new Intent(this, ContactUsActivity.class);
