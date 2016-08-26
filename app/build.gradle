@@ -6,6 +6,10 @@ android {
 
     useLibrary 'org.apache.http.legacy'
 
+    aaptOptions {
+        cruncherEnabled = false
+    }
+
     repositories {
         mavenCentral()
         maven {
