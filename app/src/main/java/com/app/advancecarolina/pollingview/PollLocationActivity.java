@@ -7,17 +7,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.app.advancecarolina.R;
 import com.app.advancecarolina.Services.ServiceHandler;
@@ -35,11 +39,17 @@ import java.util.HashMap;
 public class PollLocationActivity extends AppCompatActivity {
 
     private Button registerButton;
+    private Button searchButton;
+    private SearchView search;
+
+    Context context = getBaseContext();
+    int duration = Toast.LENGTH_SHORT;
+
 
     private ProgressDialog pDialog;
 
-    private static String addressInput = "704%20E%20Lindsay%20St";
-    private static String url = "https://www.googleapis.com/civicinfo/v2/voterinfo?address="+addressInput+",%20NC&key=AIzaSyBv_gphp6mNE2JbSmiPlu-QUNJyuviKMQg&electionId=2000";
+    private static String addressInput;
+    private String url; // = "https://www.googleapis.com/civicinfo/v2/voterinfo?address="+addressInput+"&key=AIzaSyBv_gphp6mNE2JbSmiPlu-QUNJyuviKMQg&electionId=2000";
 
     // JSON Node names
     private static final String TAG_POLLINGLOCATIONS= "pollingLocations";
@@ -62,15 +72,27 @@ public class PollLocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_poll_location);
 
         pollList = new ArrayList<HashMap<String, String>>();
-        /*
-        SearchView searchText = (SearchView) findViewById(R.id.searchView);
-        searchText.setQuery(addressInput, false);
-*/
+
+        searchButton = (Button)findViewById(R.id.searchButton);
+        final EditText edt = (EditText)findViewById(R.id.searchTextField);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addressInput = edt.getText().toString();
+                addressInput = addressInput.replaceAll(" ","%20");
+
+                url = "https://www.googleapis.com/civicinfo/v2/voterinfo?address="+addressInput+"&key=AIzaSyBv_gphp6mNE2JbSmiPlu-QUNJyuviKMQg&electionId=2000";
+                new GetPolls().execute();
+
+            }
+        });
+
 
         ListView lv =(ListView) findViewById(R.id.listView2);
 
         // Calling async task to get json
-        new GetPolls().execute();
+       // new GetPolls().execute();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -92,6 +114,7 @@ public class PollLocationActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
 
     }
 
@@ -168,6 +191,8 @@ public class PollLocationActivity extends AppCompatActivity {
                 }
                 catch (JSONException e){
                     e.printStackTrace();
+                   // Toast.makeText(context, e.getMessage(), duration).show();
+
                 }
             }
             else{
