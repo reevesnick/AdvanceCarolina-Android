@@ -54,7 +54,7 @@ public class NewsListViewAdapter extends ParseQueryAdapter {
 
         TextView dateTextView = (TextView)v.findViewById(R.id.dateText);
         dateTextView.setText(object.getCreatedAt().toString());
-
+/*
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +67,7 @@ public class NewsListViewAdapter extends ParseQueryAdapter {
 
             }
         });
-
+*/
         super.getItemView(object, v, parent);
 
         return v;

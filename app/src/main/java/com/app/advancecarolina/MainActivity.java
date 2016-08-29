@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
-               Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                      .setAction("Action", null).show();
+              /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                      .setAction("Action", null).show();*/
             }
         });
 
@@ -58,7 +58,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,ScheduleVoteActivity.class));
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+              /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+            }
+        });
+
+        FloatingActionButton notesFab = (FloatingActionButton) findViewById(R.id.fabNotes);
+        notesFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,NotesActivity.class));
+                Snackbar.make(view, "Note Saved", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
