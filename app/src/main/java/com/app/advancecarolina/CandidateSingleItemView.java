@@ -59,7 +59,7 @@ public class CandidateSingleItemView extends AppCompatActivity{
         TextView txtparty = (TextView)findViewById(R.id.partyText);
         TextView txtbio = (TextView)findViewById(R.id.descriptionText);
         TextView txtweb = (TextView)findViewById(R.id.websiteText);
-        image = (ImageView) findViewById(R.id.CandidatePic);
+        image = (PlainCircleImageView) findViewById(R.id.CandidatePic);
 
         txtname.setText(candidateName);
         txtparty.setText(candidateParty);
