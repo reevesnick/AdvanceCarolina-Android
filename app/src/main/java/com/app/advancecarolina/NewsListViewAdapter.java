@@ -21,7 +21,7 @@ import org.w3c.dom.Text;
  * Created by neegbeahreeves on 8/20/16.
  */
 public class NewsListViewAdapter extends ParseQueryAdapter {
-    Context context;
+    //Context context;
     LayoutInflater inflater;
 
 
@@ -36,14 +36,20 @@ public class NewsListViewAdapter extends ParseQueryAdapter {
         });
     }
 
+
+    @Override
+    public long getItemId(int position){
+        return position;
+    }
+
     @Override
     public View getItemView(final ParseObject object, View v, ViewGroup parent){
         if (v == null){
             v = View.inflate(getContext(), R.layout.fragment_news_item, null);
         }
 
-        ParseImageView headlineImage = (ParseImageView)v.findViewById(R.id.headlineImage);
-        ParseFile imageFile = object.getParseFile("headline_pic");
+        final ParseImageView headlineImage = (ParseImageView)v.findViewById(R.id.headlineImage);
+        final ParseFile imageFile = object.getParseFile("headline_pic");
         if (imageFile != null){
             headlineImage.setParseFile(imageFile);
             headlineImage.loadInBackground();
@@ -54,20 +60,20 @@ public class NewsListViewAdapter extends ParseQueryAdapter {
 
         TextView dateTextView = (TextView)v.findViewById(R.id.dateText);
         dateTextView.setText(object.getCreatedAt().toString());
-/*
+
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, NewsSingleItemView.class);
+                Intent intent = new Intent(getContext(), NewsSingleItemView.class);
                 intent.putExtra("headlineText", object.getString("headline"));
                 intent.putExtra("dateText",object.getCreatedAt().toString());
                 intent.putExtra("articleText",object.getString("article_description"));
-
-                context.startActivity(intent);
+                intent.putExtra("headlineImage",imageFile.getUrl());
+                getContext().startActivity(intent);
 
             }
         });
-*/
+
         super.getItemView(object, v, parent);
 
         return v;

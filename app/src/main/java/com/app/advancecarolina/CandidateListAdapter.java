@@ -1,6 +1,7 @@
 package com.app.advancecarolina;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class CandidateListAdapter extends ParseQueryAdapter {
         }
 
         Circle_ImageView headlineImage = (Circle_ImageView) v.findViewById(R.id.CandidatePic);
-        ParseFile imageFile = object.getParseFile("candidate_picture");
+        final ParseFile imageFile = object.getParseFile("candidate_picture");
         if (imageFile != null){
             headlineImage.setParseFile(imageFile);
             headlineImage.loadInBackground();
@@ -43,6 +44,20 @@ public class CandidateListAdapter extends ParseQueryAdapter {
 
         TextView dateTextView = (TextView)v.findViewById(R.id.partyText);
         dateTextView.setText(object.getString("candidate_party"));
+
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), CandidateSingleItemView.class);
+                intent.putExtra("candidatePicture", imageFile.getUrl());
+                intent.putExtra("candidateName", object.getString("candidate_name"));
+                intent.putExtra("candidateParty",object.getString("candidate_party"));
+                intent.putExtra("candidateURL", object.getString("website"));
+                intent.putExtra("candidateInfo", object.getString("candidate_bio"));
+                getContext().startActivity(intent);
+
+            }
+        });
 
         super.getItemView(object, v, parent);
 

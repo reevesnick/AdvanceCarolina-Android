@@ -55,6 +55,18 @@
         </activity>
 
         <activity
+            android:name=".NewsSingleItemView"
+            android:label="News Detail"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".CandidateSingleItemView"
+            android:label="Candidate Detail"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
             android:name=".pollingview.PollLocationActivity"
             android:label="Polling Location"
             android:screenOrientation="portrait">
