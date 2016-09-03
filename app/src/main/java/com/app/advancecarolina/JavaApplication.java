@@ -28,6 +28,8 @@ public class JavaApplication extends Application {
         );
 
         Batch.Push.setGCMSenderId("730703668742");
+        Batch.Push.setSmallIconResourceId(R.drawable.ac_notification_icon);
+
 
         // TODO : switch to live Batch Api Key before shipping
         //Batch.setConfig(new Config("DEV57BFAB319F7F4B7BB0F3471EFFB")); // devloppement
