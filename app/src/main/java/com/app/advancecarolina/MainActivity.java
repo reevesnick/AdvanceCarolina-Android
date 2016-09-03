@@ -16,6 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 
 import com.app.advancecarolina.pollingview.PollLocationActivity;
@@ -27,6 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    FloatingActionButton fab_main, fab_poll,fab_schedule, fab_notes;
+    Animation FabOpen, FabClose, FabClockwise, Fabanticlockwise;
+    boolean isOpen = false;
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -47,28 +52,64 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab_main = (FloatingActionButton)findViewById(R.id.mainfab);
+        fab_poll = (FloatingActionButton)findViewById(R.id.fab);
+        fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
+        fab_notes = (FloatingActionButton)findViewById(R.id.fabNotes);
+
+        FabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
+        FabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
+        FabClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
+        Fabanticlockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_anticlockwise);
+
+        fab_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isOpen){
+                    fab_poll.startAnimation(FabClose);
+                    fab_schedule.startAnimation(FabClose);
+                    fab_notes.startAnimation(FabClose);
+                    fab_main.startAnimation(Fabanticlockwise);
+
+                    fab_poll.setClickable(false);
+                    fab_schedule.setClickable(false);
+                    fab_notes.setClickable(false);
+                    isOpen = false;
+                }
+                else{
+                   fab_poll.startAnimation(FabOpen);
+                    fab_schedule.startAnimation(FabOpen);
+                    fab_notes.startAnimation(FabOpen);
+                    fab_main.startAnimation(FabClockwise);
+
+                    fab_poll.setClickable(true);
+                    fab_schedule.setClickable(true);
+                    fab_notes.setClickable(true);
+                    isOpen = true;
+                }
+            }
+        });
+/*
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); */
+        fab_poll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
-              /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                      .setAction("Action", null).show();*/
+
             }
         });
 
-        FloatingActionButton scheduleFab = (FloatingActionButton) findViewById(R.id.fabSchedule);
-        scheduleFab.setOnClickListener(new View.OnClickListener() {
+      //  FloatingActionButton scheduleFab = (FloatingActionButton) findViewById(R.id.fabSchedule);
+        fab_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,ScheduleVoteActivity.class));
-              /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
+
             }
         });
 
-        FloatingActionButton notesFab = (FloatingActionButton) findViewById(R.id.fabNotes);
-        notesFab.setOnClickListener(new View.OnClickListener() {
+        //FloatingActionButton notesFab = (FloatingActionButton) findViewById(R.id.fabNotes);
+        fab_notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,NotesActivity.class));
@@ -76,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
