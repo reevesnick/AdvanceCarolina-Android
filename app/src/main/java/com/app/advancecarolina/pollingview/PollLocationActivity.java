@@ -91,6 +91,9 @@ public class PollLocationActivity extends AppCompatActivity {
 
         ListView lv =(ListView) findViewById(R.id.listView2);
 
+        lv.setEmptyView(findViewById(android.R.id.empty));
+
+
         // Calling async task to get json
        // new GetPolls().execute();
 
@@ -223,6 +226,7 @@ public class PollLocationActivity extends AppCompatActivity {
 
 
             lv.setAdapter(adapter);
+
         }
 
     }
