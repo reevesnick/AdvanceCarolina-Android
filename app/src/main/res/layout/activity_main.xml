@@ -57,7 +57,7 @@
         app:pressedTranslationZ="12dp"
         android:src="@drawable/ic_my_location_white_24dp"
         android:visibility="invisible"/>
-
+<!--
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabSchedule"
         android:layout_width="wrap_content"
@@ -69,14 +69,14 @@
         app:pressedTranslationZ="12dp"
         android:src="@drawable/ic_timer_white_24dp"
         android:visibility="invisible"/>
-
+-->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="260dp"
+        android:layout_marginBottom="180dp"
         android:elevation="6dp"
         app:pressedTranslationZ="12dp"
         android:src="@drawable/ic_edit_white_24dp"

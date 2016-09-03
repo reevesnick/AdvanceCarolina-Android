@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         fab_main = (FloatingActionButton)findViewById(R.id.mainfab);
         fab_poll = (FloatingActionButton)findViewById(R.id.fab);
-        fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
+        //fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
         fab_notes = (FloatingActionButton)findViewById(R.id.fabNotes);
 
 
@@ -82,23 +82,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (isOpen){
                     fab_poll.startAnimation(FabClose);
-                    fab_schedule.startAnimation(FabClose);
+                   // fab_schedule.startAnimation(FabClose);
                     fab_notes.startAnimation(FabClose);
                     fab_main.startAnimation(Fabanticlockwise);
 
                     fab_poll.setClickable(false);
-                    fab_schedule.setClickable(false);
+                    //fab_schedule.setClickable(false);
                     fab_notes.setClickable(false);
                     isOpen = false;
                 }
                 else{
                    fab_poll.startAnimation(FabOpen);
-                    fab_schedule.startAnimation(FabOpen);
+                    //fab_schedule.startAnimation(FabOpen);
                     fab_notes.startAnimation(FabOpen);
                     fab_main.startAnimation(FabClockwise);
 
                     fab_poll.setClickable(true);
-                    fab_schedule.setClickable(true);
+                    //fab_schedule.setClickable(true);
                     fab_notes.setClickable(true);
                     isOpen = true;
                 }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+/*
         fab_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         fab_notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

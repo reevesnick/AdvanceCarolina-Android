@@ -1,10 +1,14 @@
 package com.app.advancecarolina;
 
 import android.app.Application;
+import android.content.Context;
+
 
 import com.batch.android.Batch;
 import com.batch.android.Config;
 import com.parse.Parse;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by neegbeahreeves on 8/20/16.
@@ -14,6 +18,7 @@ public class JavaApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         //getApplicationContext();
 
 
@@ -35,4 +40,5 @@ public class JavaApplication extends Application {
         //Batch.setConfig(new Config("DEV57BFAB319F7F4B7BB0F3471EFFB")); // devloppement
         Batch.setConfig(new Config("57BFAB31979A20ED50845D081BDB96")); // live
     }
+
 }
