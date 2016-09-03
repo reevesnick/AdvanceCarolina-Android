@@ -75,9 +75,6 @@ public class MainActivity extends AppCompatActivity {
             editor.commit();
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
-        }else {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
         }
 
         fab_main.setOnClickListener(new View.OnClickListener() {
