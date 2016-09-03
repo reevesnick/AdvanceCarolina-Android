@@ -42,7 +42,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        android:src="@android:drawable/ic_menu_add"
+        android:src="@drawable/ic_more_vert_white_24dp"
         android:elevation="6dp"
         app:pressedTranslationZ="12dp"/>
 
@@ -55,7 +55,7 @@
         android:layout_marginBottom="100dp"
         android:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/ic_menu_directions"
+        android:src="@drawable/ic_my_location_white_24dp"
         android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -67,7 +67,7 @@
         android:layout_marginBottom="180dp"
         android:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/ic_menu_agenda"
+        android:src="@drawable/ic_timer_white_24dp"
         android:visibility="invisible"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -79,7 +79,7 @@
         android:layout_marginBottom="260dp"
         android:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/ic_menu_share"
+        android:src="@drawable/ic_edit_white_24dp"
         android:visibility="invisible"/>
 
 

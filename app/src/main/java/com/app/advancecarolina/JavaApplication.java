@@ -30,7 +30,7 @@ public class JavaApplication extends Application {
         Batch.Push.setGCMSenderId("730703668742");
 
         // TODO : switch to live Batch Api Key before shipping
-        Batch.setConfig(new Config("DEV57BFAB319F7F4B7BB0F3471EFFB")); // devloppement
-        //Batch.setConfig(new Config("57BFAB31979A20ED50845D081BDB96")); // live
+        //Batch.setConfig(new Config("DEV57BFAB319F7F4B7BB0F3471EFFB")); // devloppement
+        Batch.setConfig(new Config("57BFAB31979A20ED50845D081BDB96")); // live
     }
 }

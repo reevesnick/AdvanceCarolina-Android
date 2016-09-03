@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    SharedPreferences sharedPreferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,10 +60,25 @@ public class MainActivity extends AppCompatActivity {
         fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
         fab_notes = (FloatingActionButton)findViewById(R.id.fabNotes);
 
+
         FabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         FabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
         FabClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
         Fabanticlockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_anticlockwise);
+
+        sharedPreferences = getSharedPreferences("ShaPreferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        boolean  firstTime=sharedPreferences.getBoolean("first", true);
+        if(firstTime) {
+            editor.putBoolean("first",false);
+            //For commit the changes, Use either editor.commit(); or  editor.apply();.
+            editor.commit();
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         fab_main.setOnClickListener(new View.OnClickListener() {
             @Override
