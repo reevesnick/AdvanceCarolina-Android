@@ -1,6 +1,8 @@
 package com.app.advancecarolina;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +19,7 @@ import android.view.MenuItem;
 
 
 import com.app.advancecarolina.pollingview.PollLocationActivity;
+import com.app.advancecarolina.pollingview.RegisterActivity;
 import com.app.advancecarolina.pollingview.ScheduleVoteActivity;
 import com.batch.android.Batch;
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

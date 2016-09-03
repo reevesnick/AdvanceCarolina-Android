@@ -12,12 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.app.advancecarolina.Services.PlainCircleImageView;
 
 import java.io.InputStream;
 import java.net.URL;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by neegbeahreeves on 8/30/16.

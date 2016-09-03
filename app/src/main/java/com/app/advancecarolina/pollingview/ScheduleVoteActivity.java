@@ -6,10 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.app.advancecarolina.R;
+
+
+import java.util.Calendar;
 
 /**
  * Created by neegbeahreeves on 8/23/16.
@@ -19,10 +23,14 @@ public class ScheduleVoteActivity extends AppCompatActivity {
     private String eventTitle;
 
     private Button scheduleButton;
+    private Button selectDate;
+    private Button selectTime;
     private EditText eventTitleText;
+    private CheckBox mode24Hours;
 
 
-    public void onCreate(Bundle savedInstancestate){
+
+    public void onCreate(Bundle savedInstancestate) {
         super.onCreate(savedInstancestate);
         setContentView(R.layout.activity_create_schedule);
 
@@ -31,19 +39,21 @@ public class ScheduleVoteActivity extends AppCompatActivity {
         //getSupportActionBar().show();
 
         // add back arrow to toolbar
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        eventTitleText = (EditText)findViewById(R.id.titleeditText);
-        scheduleButton = (Button)findViewById(R.id.create);
+        eventTitleText = (EditText) findViewById(R.id.titleeditText);
+        scheduleButton = (Button) findViewById(R.id.create);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
             }
         });
     }
+
 
     @Override
     public void onSaveInstanceState(Bundle outState){
