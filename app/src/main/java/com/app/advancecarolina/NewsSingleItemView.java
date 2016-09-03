@@ -1,6 +1,5 @@
 package com.app.advancecarolina;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,9 +12,6 @@ import android.text.util.Linkify;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.app.advancecarolina.Services.ImageLoader;
-import com.parse.ParseImageView;
 
 import java.io.InputStream;
 import java.net.URL;

@@ -2,6 +2,8 @@ package com.app.advancecarolina;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 
 import com.batch.android.Batch;
@@ -13,7 +15,7 @@ import io.fabric.sdk.android.Fabric;
 /**
  * Created by neegbeahreeves on 8/20/16.
  */
-public class JavaApplication extends Application {
+public class JavaApplication extends MultiDexApplication {
 
     @Override
     public void onCreate() {
@@ -41,4 +43,9 @@ public class JavaApplication extends Application {
         Batch.setConfig(new Config("57BFAB31979A20ED50845D081BDB96")); // live
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        MultiDex.install(this);
+    }
 }
