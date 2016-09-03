@@ -89,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-/*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); */
+
         fab_poll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-      //  FloatingActionButton scheduleFab = (FloatingActionButton) findViewById(R.id.fabSchedule);
         fab_schedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //FloatingActionButton notesFab = (FloatingActionButton) findViewById(R.id.fabNotes);
         fab_notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

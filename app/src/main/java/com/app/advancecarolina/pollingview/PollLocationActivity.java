@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.advancecarolina.R;
@@ -50,6 +51,7 @@ public class PollLocationActivity extends AppCompatActivity {
 
     private static String addressInput;
     private String url; // = "https://www.googleapis.com/civicinfo/v2/voterinfo?address="+addressInput+"&key=AIzaSyBv_gphp6mNE2JbSmiPlu-QUNJyuviKMQg&electionId=2000";
+    private TextView emptyString;
 
     // JSON Node names
     private static final String TAG_POLLINGLOCATIONS= "pollingLocations";
@@ -87,6 +89,7 @@ public class PollLocationActivity extends AppCompatActivity {
 
             }
         });
+
 
 
         ListView lv =(ListView) findViewById(R.id.listView2);
@@ -223,6 +226,9 @@ public class PollLocationActivity extends AppCompatActivity {
 
 
             ListView lv =(ListView) findViewById(R.id.listView2);
+
+            emptyString = (TextView)findViewById(R.id.empty);
+            lv.setEmptyView(emptyString);
 
 
             lv.setAdapter(adapter);
