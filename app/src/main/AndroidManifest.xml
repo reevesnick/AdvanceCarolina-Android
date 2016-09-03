@@ -46,24 +46,44 @@
             android:name=".pollingview.ScheduleVoteActivity"
             android:label="Create A Schedule"
             android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.MainActivity" />
+
         </activity>
 
         <activity
             android:name=".NotesActivity"
             android:label="Notes"
             android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.MainActivity" />
+
         </activity>
 
         <activity
             android:name=".NewsSingleItemView"
             android:label="News Detail"
             android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.MainActivity" />
+
         </activity>
 
         <activity
             android:name=".CandidateSingleItemView"
             android:label="Candidate Detail"
             android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.MainActivity" />
+
         </activity>
 
         <activity
@@ -76,6 +96,11 @@
             android:name=".pollingview.PollLocationActivity"
             android:label="Polling Location"
             android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.MainActivity" />
+
 
         </activity>
 
