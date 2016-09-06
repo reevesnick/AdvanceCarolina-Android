@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -26,6 +27,7 @@ import com.app.advancecarolina.pollingview.ScheduleVoteActivity;
 import com.batch.android.Batch;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         fab_main = (FloatingActionButton)findViewById(R.id.mainfab);
         fab_poll = (FloatingActionButton)findViewById(R.id.fab);
-        //fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
+        fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
         fab_notes = (FloatingActionButton)findViewById(R.id.fabNotes);
 
 
@@ -82,23 +84,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (isOpen){
                     fab_poll.startAnimation(FabClose);
-                   // fab_schedule.startAnimation(FabClose);
+                   fab_schedule.startAnimation(FabClose);
                     fab_notes.startAnimation(FabClose);
                     fab_main.startAnimation(Fabanticlockwise);
 
                     fab_poll.setClickable(false);
-                    //fab_schedule.setClickable(false);
+                    fab_schedule.setClickable(false);
                     fab_notes.setClickable(false);
                     isOpen = false;
                 }
                 else{
                    fab_poll.startAnimation(FabOpen);
-                    //fab_schedule.startAnimation(FabOpen);
+                    fab_schedule.startAnimation(FabOpen);
                     fab_notes.startAnimation(FabOpen);
                     fab_main.startAnimation(FabClockwise);
 
                     fab_poll.setClickable(true);
-                    //fab_schedule.setClickable(true);
+                    fab_schedule.setClickable(true);
                     fab_notes.setClickable(true);
                     isOpen = true;
                 }
@@ -108,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
         fab_poll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
-
+              // startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
+                Intent intent = new Intent(Intent.ACTION_INSERT_OR_EDIT);
+                intent.setType("vnd.android.cursor.item/event");
+                startActivity(intent);
             }
         });
 /*
@@ -143,7 +147,25 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
+    public void onAddEventClicked(View view){
+        Intent intent = new Intent(Intent.ACTION_INSERT);
+        intent.setType("vnd.android.cursor.item/event");
 
+        Calendar cal = Calendar.getInstance();
+        long startTime = cal.getTimeInMillis();
+        long endTime = cal.getTimeInMillis()  + 60 * 60 * 1000;
+
+        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime);
+        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,endTime);
+       // intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
+
+        intent.putExtra(CalendarContract.Events.TITLE, "Voting Schedule");
+       // intent.putExtra(CalendarContract.Events.DESCRIPTION,  "This is a sample description");
+        intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Polling Location");
+       // intent.putExtra(CalendarContract.Events.RRULE, "FREQ=YEARLY");
+
+        startActivity(intent);
+    }
 
 
     @Override
