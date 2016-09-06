@@ -110,10 +110,10 @@ public class MainActivity extends AppCompatActivity {
         fab_poll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              // startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
-                Intent intent = new Intent(Intent.ACTION_INSERT_OR_EDIT);
+              startActivity(new Intent(MainActivity.this,PollLocationActivity.class));
+               /* Intent intent = new Intent(Intent.ACTION_INSERT_OR_EDIT);
                 intent.setType("vnd.android.cursor.item/event");
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 /*
