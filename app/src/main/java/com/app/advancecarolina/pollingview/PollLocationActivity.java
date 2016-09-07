@@ -197,7 +197,6 @@ public class PollLocationActivity extends AppCompatActivity {
                 }
                 catch (JSONException e){
                     e.printStackTrace();
-                    //Toast.makeText(context, e.getMessage(), duration).show();
 
                 }
             }
@@ -212,6 +211,11 @@ public class PollLocationActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
+
+            if (result == null){
+                Toast.makeText(getApplicationContext(), "Unable to obtain data. Check the input and try again. ", duration).show();
+
+            }
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();

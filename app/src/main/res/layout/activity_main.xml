@@ -105,7 +105,6 @@
         fab:fab_size="mini"
         android:background="@color/colorPrimary"
         fab:fab_colorNormal="@color/colorPrimary"
-
         />
 
 </com.github.clans.fab.FloatingActionMenu>
