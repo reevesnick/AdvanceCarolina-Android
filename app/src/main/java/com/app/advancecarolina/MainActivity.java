@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -21,10 +21,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 
+
 import com.app.advancecarolina.pollingview.PollLocationActivity;
 import com.app.advancecarolina.pollingview.RegisterActivity;
 import com.app.advancecarolina.pollingview.ScheduleVoteActivity;
 import com.batch.android.Batch;
+import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -57,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        fab_main = (FloatingActionButton)findViewById(R.id.mainfab);
+       // fab_main = (FloatingActionButton)findViewById(R.id.mainfab);
         fab_poll = (FloatingActionButton)findViewById(R.id.fab);
         fab_schedule = (FloatingActionButton)findViewById(R.id.fabSchedule);
         fab_notes = (FloatingActionButton)findViewById(R.id.fabNotes);
 
-
+/*
         FabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         FabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
         FabClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
         fab_poll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

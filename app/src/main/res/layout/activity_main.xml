@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,54 +36,78 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
     <include layout="@layout/content_main" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/mainfab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_more_vert_white_24dp"
         android:elevation="6dp"
-        app:pressedTranslationZ="12dp"/>
+        fab:menu_icon="@drawable/ic_more_vert_black_18dp"
+        app:pressedTranslationZ="12dp"
+        fab:fab_label="Example Label"
+        fab:menu_colorNormal="@color/colorPrimary"
+        fab:menu_buttonSpacing="2dp"
 
-    <android.support.design.widget.FloatingActionButton
+        >
+
+    <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="100dp"
-        android:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@drawable/ic_my_location_white_24dp"
-        android:visibility="invisible"/>
+        android:src="@drawable/ic_my_location_black_18dp"
+        android:visibility="visible"
+        fab:fab_label="Polling Location"
+        fab:menu_labels_position="left"
+        fab:fab_size="mini"
+        fab:fab_colorNormal="@color/colorPrimary"
 
-    <android.support.design.widget.FloatingActionButton
+
+
+        />
+
+    <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fabSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="180dp"
-        android:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@drawable/ic_timer_white_24dp"
+        android:src="@drawable/ic_today_black_18dp"
         android:onClick="onAddEventClicked"
-        android:visibility="invisible"/>
+        android:visibility="visible"
+        fab:fab_label="Schedule Vote"
+        fab:menu_labels_position="left"
+        fab:fab_size="mini"
+        fab:fab_colorNormal="@color/colorPrimary"
 
-    <android.support.design.widget.FloatingActionButton
+
+        />
+
+    <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fabNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="260dp"
-        android:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@drawable/ic_edit_white_24dp"
-        android:visibility="invisible"/>
+        android:src="@drawable/ic_edit_black_18dp"
+        android:visibility="visible"
+        fab:fab_label="Add Note"
+        fab:menu_labels_position="left"
+        fab:fab_size="mini"
+        android:background="@color/colorPrimary"
+        fab:fab_colorNormal="@color/colorPrimary"
 
+        />
 
+</com.github.clans.fab.FloatingActionMenu>
 
 </android.support.design.widget.CoordinatorLayout>

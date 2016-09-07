@@ -197,7 +197,7 @@ public class PollLocationActivity extends AppCompatActivity {
                 }
                 catch (JSONException e){
                     e.printStackTrace();
-                   // Toast.makeText(context, e.getMessage(), duration).show();
+                    //Toast.makeText(context, e.getMessage(), duration).show();
 
                 }
             }
