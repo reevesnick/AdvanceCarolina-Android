@@ -10,6 +10,18 @@
         android:cacheColorHint="@android:color/transparent"
         android:dividerHeight="1dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emptyTextView"
+        android:textSize="30dp"
+        android:text="Sample Ballot coming soon."
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"/>
+
+<!--
     <WebView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +32,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true" />
-
+-->
 
 </RelativeLayout>

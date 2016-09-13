@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -41,7 +42,11 @@ public class NotesActivity extends AppCompatActivity implements OnClickListener{
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         }
+
+        getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#000000\">" + getString(R.string.notes_string_title) + "</font>")));
+
 
     }
 
@@ -50,7 +55,7 @@ public class NotesActivity extends AppCompatActivity implements OnClickListener{
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
 //        boolean checkBoxValue = sharedPreferences.getBoolean("CheckBox_Value", false);
-        String notes = sharedPreferences.getString("storedName", "YourNotes");
+        String notes = sharedPreferences.getString("storedName", "");
         /*if (checkBoxValue) {
             checkBox.setChecked(true);
         } else {

@@ -21,7 +21,7 @@ public class CandidateListAdapter extends ParseQueryAdapter {
             @Override
             public ParseQuery create() {
                 ParseQuery query = new ParseQuery("CandidaeList");
-                query.orderByDescending("created_at");
+                query.orderByAscending("createdAt");
                 return query;
             }
         });
@@ -44,6 +44,10 @@ public class CandidateListAdapter extends ParseQueryAdapter {
 
         TextView dateTextView = (TextView)v.findViewById(R.id.partyText);
         dateTextView.setText(object.getString("candidate_party"));
+
+        TextView officeTextView = (TextView)v.findViewById(R.id.officeText);
+        officeTextView.setText(object.getString("office"));
+
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override

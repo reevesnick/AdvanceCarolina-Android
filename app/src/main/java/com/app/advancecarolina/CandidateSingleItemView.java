@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,9 @@ public class CandidateSingleItemView extends AppCompatActivity{
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#000000\">" + getString(R.string.candidate_details_string_title) + "</font>")));
+
 
         Intent i =getIntent();
         candidateName = i.getStringExtra("candidateName");

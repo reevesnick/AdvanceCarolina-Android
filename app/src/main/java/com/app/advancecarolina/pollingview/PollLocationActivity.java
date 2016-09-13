@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -110,11 +113,13 @@ public class PollLocationActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        getSupportActionBar().setTitle((Html.fromHtml("<font color=\"#000000\">" + getString(R.string.poll_string_title) + "</font>")));
+
         registerButton = (Button)findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.usa.gov/register-to-vote";
+                String url = "https://register.rockthevote.com/registrants/new?partner=34021&source=embed-rtv468x60v1";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -198,6 +203,7 @@ public class PollLocationActivity extends AppCompatActivity {
                 catch (JSONException e){
                     e.printStackTrace();
 
+
                 }
             }
             else{
@@ -216,6 +222,7 @@ public class PollLocationActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Unable to obtain data. Check the input and try again. ", duration).show();
 
             }
+
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();

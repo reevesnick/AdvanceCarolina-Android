@@ -12,5 +12,9 @@
     <string name="zip">Zip</string>
     <string name="party">Party</string>
     <string name="Register">Fill out your info to help us determine the voting status</string>
+    <string name="notes_string_title">Notes</string>
+    <string name="poll_string_title">Polling Location</string>
+    <string name="news_details_string_title">News Details</string>
+    <string name="candidate_details_string_title">Candidate Details</string>
 
 </resources>

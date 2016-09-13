@@ -41,7 +41,14 @@
 
         <activity
             android:name=".ContactUsActivity"
-            android:label="Contact Us" />
+            android:label="Contact Us"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.advancecarolina.MainActivity" />
+
+        </activity>
 
         <activity
             android:name=".pollingview.ScheduleVoteActivity"

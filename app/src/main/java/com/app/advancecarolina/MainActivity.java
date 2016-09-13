@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new NewsFragment(), "News");
-        adapter.addFragment(new BallotFragment(), "Ballot");
+        adapter.addFragment(new BallotFragment(), "Sample Ballot");
         //adapter.addFragment(new PollingView(), "Poll");
         adapter.addFragment(new CandidatesFragment(), "Candidates");
         //adapter.addFragment(new ContactUsActivity(), "Contact Us");
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,endTime);
        // intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
 
-        intent.putExtra(CalendarContract.Events.TITLE, "Voting Schedule");
+        intent.putExtra(CalendarContract.Events.TITLE, "I am voting Today!");
        // intent.putExtra(CalendarContract.Events.DESCRIPTION,  "This is a sample description");
         intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Polling Location");
        // intent.putExtra(CalendarContract.Events.RRULE, "FREQ=YEARLY");

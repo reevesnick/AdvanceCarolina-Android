@@ -35,6 +35,20 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#000080"
+        android:text="Office"
+        android:id="@+id/officeText"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/partyText"
+        android:layout_alignLeft="@+id/candidateText"
+        android:layout_alignStart="@+id/candidateText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <com.app.advancecarolina.Services.Circle_ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"

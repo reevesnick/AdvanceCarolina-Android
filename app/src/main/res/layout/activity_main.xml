@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            android:titleTextColor="#000000"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
@@ -25,6 +26,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:titleTextColor="#000000"
             app:tabMode="fixed"
             app:tabGravity="fill"/>
     </android.support.design.widget.AppBarLayout>
@@ -82,7 +84,7 @@
         android:src="@drawable/ic_today_black_18dp"
         android:onClick="onAddEventClicked"
         android:visibility="visible"
-        fab:fab_label="Schedule Vote"
+        fab:fab_label="Schedule Your Vote"
         fab:menu_labels_position="left"
         fab:fab_size="mini"
         fab:fab_colorNormal="@color/colorPrimary"
