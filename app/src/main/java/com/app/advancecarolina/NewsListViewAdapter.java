@@ -30,7 +30,7 @@ public class NewsListViewAdapter extends ParseQueryAdapter {
             @Override
             public ParseQuery<ParseObject> create() {
                 ParseQuery query = new ParseQuery("News");
-                query.orderByDescending("created_at");
+                query.orderByDescending("createdAt");
                 return query;
             }
         });
